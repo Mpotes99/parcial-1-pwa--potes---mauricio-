@@ -3,7 +3,7 @@ const jsonConverter = (response) => response.json();
 const app = new VTTCue({
     el:'#app',
     data:{
-        personajes:[]
+        personajes:[],
         personajeselec:{}
     },
     methods:{
@@ -16,6 +16,17 @@ const app = new VTTCue({
             .catch(error => {
                 console.error('Error', error);
             })
-        }
+        },
+    mostrarDetalles(personaje){
+        this.personajeSeleccionado = personaje;
+        this.mostrasModal = true;
+    },
+    cerrarModal(){
+        this.mostrarModal = false;
+    }
+
+    },
+    mounted(){
+        this.obtenerPersonajes();
     }
 })
