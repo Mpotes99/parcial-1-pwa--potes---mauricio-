@@ -4,35 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personajes de Rick y Morty</title>
+    <!-- Agrega Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
 </head>
 <body>
     <div id="app">
-        <header>
+        <header class="bg-dark text-white text-center py-4">
             <h1>Personajes de Rick y Morty</h1>
         </header>
-        <main>
-            <div id="lista-personajes" class="lista-personajes">
-                <div v-for="personaje in personajes" :key="personaje.id" @click="abrirModal(personaje)" class="personajetarjeta">
-                    <h2>{{ personaje.name }}</h2>
-                    <p>Género: {{ personaje.gender }}</p>
-                    <p><a href="javascript:void(0);" @click="mostrarDetalles(personaje)">Más Info</a></p>
+        <main class="container my-4">
+            <div id="lista-personajes" class="row">
+                <div v-for="personaje in personajes" :key="personaje.id" @click="abrirModal(personaje)" class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ personaje.name }}</h2>
+                            <p class="card-text">Género: {{ personaje.gender }}</p>
+                            <a href="javascript:void(0);" @click="mostrarDetalles(personaje)" class="btn btn-dark">Más Info</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div v-if="personajeSeleccionado" class="modal">
-                <div class="modal-contenido">
-                    <h2>{{ personajeSeleccionado.name }}</h2>
-                    <p>Género: {{ personajeSeleccionado.gender }}</p>
-                    <p>URL: {{ personajeSeleccionado.url }}</p>
-                    <span class="modal-cerrar" @click="cerrarModal">&times;</span>
+            <div v-if="personajeSeleccionado" class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title">{{ personajeSeleccionado.name }}</h2>
+                            <button type="button" class="close" @click="cerrarModal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Género: {{ personajeSeleccionado.gender }}</p>
+                            <p>URL: {{ personajeSeleccionado.url }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
     </div>
+    <!-- Agrega Bootstrap JavaScript al final del cuerpo -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
