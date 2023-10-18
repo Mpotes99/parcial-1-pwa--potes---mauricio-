@@ -9,10 +9,21 @@
 <body>
     <div class="app">
         <div class="personajes">
-            <div class="card-personajes">
-                
+            <div class="tarjeta-personaje" v-for="personaje in personajes" :key="personaje.id">
+                <h3>{{ personaje.name }}</h3>
+                <p>Género: {{ personaje.genero }}</p>
+                <button @click="mostrarDetalles(personaje)">Ver Detalles</button>
+            </div>
+        </div>
+        <div class="modal" v-if="mostrarModal">
+            <div class="contenido-modal">
+                <h2>{{ personajeSeleccionado.name }}</h2>
+                <p>Género {{ personajeSeleccionado.gender }}</p>
+                <button @click="cerrarModal">Cerrar</button>
             </div>
         </div>
     </div>
+    
+    <script src="main.js"></script>
 </body>
 </html>
