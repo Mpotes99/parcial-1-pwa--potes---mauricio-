@@ -40,8 +40,9 @@
                         <div class="modal-body">
                             
                             <p>Género: {{ personajeSeleccionado.gender }}</p>
+                            <img :src="personajeSeleccionado.image" alt="{{ personajeSeleccionado.name }}" class="img-fluid">
+
                             <p>URL: {{ personajeSeleccionado.url }}</p>
-                            <img :src="personaje.image">
                         </div>
                     </div>
                 </div>
