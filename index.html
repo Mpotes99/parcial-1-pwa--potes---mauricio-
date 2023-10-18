@@ -38,11 +38,10 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            
                             <p>Género: {{ personajeSeleccionado.gender }}</p>
                             <img :src="personajeSeleccionado.image" alt="{{ personajeSeleccionado.name }}" class="img-fluid">
 
-                            <p>URL: {{ personajeSeleccionado.url }}</p>
+                            <p>URL: <a :href="personajeSeleccionado.url" target="_blank">{{ personajeSeleccionado.url }}</a></p>
                         </div>
                     </div>
                 </div>
