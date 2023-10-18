@@ -9,7 +9,7 @@ const app = new VTTCue({
     methods:{
         obtenerPersonajes(){
             fetch('https://rickandmortyapi.com/api/character/?status=alive')
-            .then(respuesta => respuesta.json)
+            .then(respuesta => respuesta.json())
             .then(data => {
                 this.personajes = data.results;
             })

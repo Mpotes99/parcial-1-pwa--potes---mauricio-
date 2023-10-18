@@ -11,7 +11,7 @@
         <div class="personajes">
             <div class="tarjeta-personaje" v-for="personaje in personajes" :key="personaje.id">
                 <h3>{{ personaje.name }}</h3>
-                <p>Género: {{ personaje.genero }}</p>
+                <p>Género: {{ personaje.gender }}</p>
                 <button @click="mostrarDetalles(personaje)">Ver Detalles</button>
             </div>
         </div>
