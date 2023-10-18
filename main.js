@@ -6,4 +6,16 @@ const app = new VTTCue({
         personajes:[]
         personajeselec:{}
     },
+    methods:{
+        obtenerPersonajes(){
+            fetch('https://rickandmortyapi.com/api/character/?status=alive')
+            .then(respuesta => respuesta.json)
+            .then(data => {
+                this.personajes = data.results;
+            })
+            .catch(error => {
+                console.error('Error', error);
+            })
+        }
+    }
 })
