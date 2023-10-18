@@ -13,17 +13,17 @@
         </header>
         <main>
             <div id="lista-personajes" class="lista-personajes">
-                <div v-for="personaje in personajes" :key="personaje.id" @click="abrirModal(personaje)">
+                <div v-for="personaje in personajes" :key="personaje.id" @click="abrirModal(personaje)" class="personajetarjeta">
                     <h2>{{ personaje.name }}</h2>
                     <p>Género: {{ personaje.gender }}</p>
-                    <p><a :href="personaje.url" target="_blank">Más Info</a></p>
+                    <p><a href="javascript:void(0);" @click="mostrarDetalles(personaje)">Más Info</a></p>
                 </div>
             </div>
             <div v-if="personajeSeleccionado" class="modal">
                 <div class="modal-contenido">
                     <h2>{{ personajeSeleccionado.name }}</h2>
                     <p>Género: {{ personajeSeleccionado.gender }}</p>
-                    <p><a :href="personajeSeleccionado.url" target="_blank">Más Info</a></p>
+                    <p>URL: {{ personajeSeleccionado.url }}</p>
                     <span class="modal-cerrar" @click="cerrarModal">&times;</span>
                 </div>
             </div>

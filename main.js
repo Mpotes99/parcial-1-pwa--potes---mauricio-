@@ -20,6 +20,9 @@ new Vue({
           })
           .catch(error => console.error('Error:', error));
       },
+      mostrarDetalles(personaje) {
+        this.personajeSeleccionado = personaje;
+      },
       abrirModal(personaje) {
         this.personajeSeleccionado = personaje;
       },
