@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rick y Morthy</title>
+    <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
 </head>
 <body>
-    <div class="app">
+    <div id="#app">
+        <h1>Personajes de Rick y Morty</h1>
         <div class="personajes">
             <div class="tarjeta-personaje" v-for="personaje in personajes" :key="personaje.id">
                 <h3>{{ personaje.name }}</h3>
@@ -18,12 +20,12 @@
         <div class="modal" v-if="mostrarModal">
             <div class="contenido-modal">
                 <h2>{{ personajeSeleccionado.name }}</h2>
-                <p>Género {{ personajeSeleccionado.gender }}</p>
+                <p>Género: {{ personajeSeleccionado.gender }}</p>
+                <p>Estado: {{ personajeSeleccionado.status }}</p>
+                <p>Especie: {{ personajeSeleccionado.species }}</p>
                 <button @click="cerrarModal">Cerrar</button>
             </div>
         </div>
     </div>
-    
-    <script src="main.js"></script>
 </body>
 </html>
