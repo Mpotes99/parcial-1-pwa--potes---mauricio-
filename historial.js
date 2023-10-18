@@ -8,5 +8,5 @@ document.addEventListener("DOMContentLoaded", function () {
       listItem.textContent = personaje.name;
       historialList.appendChild(listItem);
     });
-  });
+});
   

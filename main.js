@@ -23,7 +23,6 @@ new Vue({
       mostrarDetalles(personaje) {
         this.personajeSeleccionado = personaje;
   
-        // Agregar el personaje al historial utilizando localStorage
         const historial = JSON.parse(localStorage.getItem("historial")) || [];
         historial.push(personaje);
         localStorage.setItem("historial", JSON.stringify(historial));

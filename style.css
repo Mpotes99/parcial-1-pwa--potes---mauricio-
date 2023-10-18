@@ -5,6 +5,11 @@ body {
     background-image: url(fondo.webp);
 }
 
+a{
+    list-style: none;
+    color: black;
+}
+
 header {
     background-color: #2f1c4d;
     color: #ffffff;
