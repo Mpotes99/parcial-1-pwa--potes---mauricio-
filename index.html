@@ -12,9 +12,14 @@
     <div id="app">
         <header class="bg-dark text-white text-center py-4">
             <h1>Personajes de Rick y Morty</h1>
+            <div class="historial">
+                <button type="button" class="btn btn-light"><a href="historal.html">Historial</a></button>
+            </div>
         </header>
         <main class="container my-4">
+            
             <div id="lista-personajes" class="row">
+
                 <div v-for="personaje in personajes" :key="personaje.id" @click="abrirModal(personaje)" class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
